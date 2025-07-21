@@ -76,7 +76,7 @@ export default function Deck({ cards }) {
             <animated.div
               {...bind(i)}
               style={{
-                backgroundImage: `url(public/img/${cards[i].url})`,
+                backgroundImage: `url(${import.meta.env.BASE_URL}img/${cards[i].url})`,
                 // width: cards[i].orientation === "portrait" ? small : large,
                 // height: cards[i].orientation === "portrait" ? large : small
                 width: cards[i].orientation === "portrait" ? "360px" : "480px",
