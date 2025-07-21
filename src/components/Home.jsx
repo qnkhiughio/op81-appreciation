@@ -52,7 +52,8 @@ export default function Home() {
   useEffect(() => {
     const fetchExcelFromRepo = async () => {
       try {
-        const url = `${import.meta.env.BASE_URL}/data/OSCAR APPRECIATION (Responses).xlsx`;
+        const url = `${import.meta.env.BASE_URL}data/OSCAR APPRECIATION (Responses).xlsx`;
+        console.log("Fetching Excel file from:", url);
         const response = await axios.get(url, { responseType: 'arraybuffer' });
         const data = new Uint8Array(response.data);
         const workbook = XLSX.read(data, { type: 'array' });
@@ -76,7 +77,7 @@ export default function Home() {
         <div className="row">
           <div
             className="photo"
-            style={{ backgroundImage: `url(${import.meta.env.BASE_URL}/img/IMG_6453.JPG)` }}
+            style={{ backgroundImage: `url(${import.meta.env.BASE_URL}img/IMG_6453.JPG)` }}
           />
           <div className="text" style={{ paddingLeft: "5%"}}>
             <div className="header" style={{ fontSize: screenWidth>1000 ? "5rem" : "3rem" }}>Oscar Piastri</div>
